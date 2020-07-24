@@ -23,6 +23,9 @@ google_site_verification: ""
 twitter:
   card: summary_large_image
 
+sass:
+  style: compressed
+
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
