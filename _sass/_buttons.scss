@@ -1,0 +1,22 @@
+.button {
+  background: $brand;
+  color: $white;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid transparent;
+  border-radius: $border-radius;
+  transition: background-color $hover-transition-time ease-out, color $hover-transition-time ease-out;
+  font-family: inherit;
+  font-size: $font-size-h5;
+  appearance: none;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    background: $white;
+    color: $brand;
+  }
+}

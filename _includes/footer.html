@@ -1,0 +1,16 @@
+<footer class="footer">
+  <div class="container">
+    <ul class="footer-nav">
+      {% for link in site.data.footer-links %}
+      <li>
+        <a href="/{{ link.slug }}.html">
+          {{ link.title }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="copyright">
+      &copy; {{ 'now' | date: "%Y" }} {{ site.business_name }}. All Rights Reserved.
+    </div>
+  </div>
+</footer>

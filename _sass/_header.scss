@@ -1,0 +1,27 @@
+// @2x size retina images
+$star-height: 185/2;
+$star-width: 346/2;
+
+.header {
+  background-color: $brand;
+  background-image: url("/assets/images/hills.svg"), url("/assets/images/star@2x.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: left -16em bottom 0, right -2em bottom 0;
+  background-size: 400px 41px, #{$star-width}px #{$star-height}px;
+  padding-top: 2em;
+  padding-bottom: 4em;
+
+  @media only screen and (min-width: $break-medium) {
+    background-position: left -2em bottom 0, right 3em bottom 0;
+  }
+}
+
+.logo {
+  width: 347px; // gives approx h2 height
+}
+
+.tagline {
+  color: $white;
+  font-family: $font-family-title;
+  padding-right: 60px; // make sure tagline doesn't overlap with star
+}
