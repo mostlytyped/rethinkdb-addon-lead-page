@@ -26,6 +26,11 @@ twitter:
 sass:
   style: compressed
 
+autoprefixer:
+  browsers:
+    - last 2 versions
+
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-autoprefixer
