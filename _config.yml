@@ -2,7 +2,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "RethinkHorizon" # the name of your site, e.g. ACME Corp.
 
-business_name: "LamdaFunctional"
+business_name: "Mostly Typed"
 # TODO
 mailchimp_form_action: ""
 
