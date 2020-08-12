@@ -22,11 +22,18 @@
     <!-- Jekyll SEO plugin. Displays `<title>` and social meta tags -->
     {% seo %}
 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
 
     <meta name="theme-color" content="#fafafa">
   </head>
   <body>
-    {{ content}}
+    {% include header.html %}
+
+    <main>
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
   </body>
 </html>

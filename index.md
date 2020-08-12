@@ -1,7 +1,8 @@
 ---
 layout: default
-title: "Reliable realtime RethinkDB databases for Heroku"
+title: "Reliable realtime database for Heroku"
 image: social.png
 ---
 
-## You're ready to go!
+{% include features.html %}
+{% include optin.html %}
