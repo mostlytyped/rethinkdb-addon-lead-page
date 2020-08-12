@@ -30,15 +30,8 @@
   <body>
     {% include header.html %}
 
-    {% if page.url == "/" %}
-      {% include features.html %}
-      {% include optin.html %}
-    {% endif %}
-
     <main>
-      <div class="container">
-        {{ content }}
-      </div>
+      {{ content }}
     </main>
 
     {% include footer.html %}
