@@ -1,6 +1,6 @@
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-title: "RethinkHorizon" # the name of your site, e.g. ACME Corp.
+title: "RethinkDBCloud" # the name of your site, e.g. ACME Corp.
 
 business_name: "Mostly Typed"
 # TODO
@@ -10,14 +10,7 @@ mailchimp_form_action: ""
 # `tagline` is an unreleased feature and does not work, although it's mentioned in the seo plugin docs
 # https://github.com/jekyll/jekyll-seo-tag/issues/379
 
-# Shorter descriptions
-# "Reliable realtime RethinkDB databases for Heroku"
-# "Fast and reliable realtime RethinkDB databases, with a secure admin dashboard, for your Heroku application."
-
-# TODO title tbc, make sure it is up to date
-# TODO Can we say 'fast'?
-# TODO Can we say 'setup in seconds'?
-description: "RethinkHorizon provides fast and reliable realtime RethinkDB databases for Heroku, with a secure admin dashboard. RethinkDB is the open source database for the realtime web, a document-orientated database with realtime updates for your Heroku application."
+description: "RethinkDBCloud provides a fast and reliable realtime database for Heroku. Conveniently scale your database up and down with a single command. Scale instantly and seamlessly, without loosing any data."
 # TODO
 google_site_verification: ""
 twitter:
