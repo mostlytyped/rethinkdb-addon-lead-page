@@ -17,7 +17,11 @@ $star-width: 346/2;
 }
 
 .logo {
-  width: 347px; // gives approx h2 height
+  width: 350px; // gives approx h2 height
+}
+
+.logo-svg {
+  fill: $white;
 }
 
 .tagline {
