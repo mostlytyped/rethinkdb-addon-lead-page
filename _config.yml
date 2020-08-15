@@ -3,8 +3,6 @@ baseurl: "" # the subpath of your site, e.g. /blog
 title: "RethinkDBCloud" # the name of your site, e.g. ACME Corp.
 
 business_name: "Mostly Typed"
-# TODO
-mailchimp_form_action: ""
 
 # SEO (https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md)
 # `tagline` is an unreleased feature and does not work, although it's mentioned in the seo plugin docs

@@ -1,0 +1,55 @@
+#error-message {
+  color: #661d1d;
+  background-color: #ffeded;
+  border-radius: $border-radius;
+  border-color: #ff4949;
+}
+
+#success-message {
+  color: #085229;
+  background-color: #e7faf0;
+  border-radius: $border-radius;
+  border-color: #13ce66;
+}
+
+.entry__error {
+  color: #661d1d;
+  display: none;
+  background-color: #ffeded;
+  border-radius: $border-radius;
+  border-color: #ff4949;
+  margin-bottom: 1em;
+  padding: 0.5em 1em;
+}
+
+.sib-form-message-panel {
+  display: none;
+  margin-bottom: 1em;
+  padding: 0.5em;
+}
+
+.sib-form-message-panel--active {
+  display: block;
+}
+
+.sib-hide-loader-icon {
+  display: none;
+}
+
+.sib-loader-icon {
+  fill: $white;
+  height: 20px;
+  width: 20px;
+}
+
+.progress-indicator__icon {
+  animation: indicator-spin 1.3s cubic-bezier(0.46, 0.35, 0.39, 0.85) infinite;
+}
+@keyframes indicator-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
