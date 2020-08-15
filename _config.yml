@@ -1,6 +1,6 @@
 url: "https://rethinkdbcloud.com" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-title: "RethinkDBCloud" # the name of your site, e.g. ACME Corp.
+title: "RethinkDB Cloud" # the name of your site, e.g. ACME Corp.
 
 business_name: "Mostly Typed"
 
@@ -8,7 +8,7 @@ business_name: "Mostly Typed"
 # `tagline` is an unreleased feature and does not work, although it's mentioned in the seo plugin docs
 # https://github.com/jekyll/jekyll-seo-tag/issues/379
 
-description: "RethinkDBCloud provides a fast and reliable realtime database for Heroku. Conveniently scale your database up and down with a single command. Scale instantly and seamlessly, without loosing any data."
+description: "RethinkDB Cloud provides a fast and reliable realtime database for Heroku. Conveniently scale your database up and down with a single command. Scale instantly and seamlessly, without loosing any data."
 # google_site_verification: ""
 twitter:
   card: summary_large_image
