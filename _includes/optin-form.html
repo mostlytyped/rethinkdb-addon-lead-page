@@ -47,8 +47,62 @@
               </div>
             </div>
           </div>
-          <div style="padding: 8px 0;">
-            <div class="sib-form-block" style="text-align: left;">
+          <div>
+            <div class="sib-optin sib-form-block" data-required="true">
+              <div class="form__entry entry_mcq">
+                <div class="form__label-row">
+                  <label class="screen-reader-text" for="OPT_IN" data-required="*">
+                    Opt-in
+                  </label>
+                  <div class="entry__choice">
+                    <label class="consent">
+                      <input
+                        type="checkbox"
+                        class="input_replaced consent-checkbox"
+                        value="1"
+                        id="OPT_IN"
+                        name="OPT_IN"
+                        required
+                      />
+                      <div>
+                        <span class="checkbox checkbox_tick_positive"></span>
+                        <p>I agree to receive your newsletters and accept the data privacy statement.</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <label class="entry__error entry__error--primary"> </label>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="gdpr-legal-copy">
+              We use Sendinblue as our marketing platform. By Clicking below to submit this form, you acknowledge that
+              the information you provided will be transferred to Sendinblue for processing in accordance with their
+              <a target="_blank" href="https://www.sendinblue.com/legal/termsofuse/">terms of use</a>.
+            </p>
+          </div>
+          <div class="sib-captcha sib-form-block catpcha">
+            <div class="form__entry entry_block">
+              <div class="form__label-row">
+                <script>
+                  function handleCaptchaResponse() {
+                    var event = new Event("captchaChange");
+                    document.getElementById("sib-captcha").dispatchEvent(event);
+                  }
+                </script>
+                <div
+                  class="g-recaptcha sib-visible-recaptcha"
+                  id="sib-captcha"
+                  data-sitekey="6LfJEMAZAAAAACNOCZndIc9JF-n6jzv3KPgTu1Qi"
+                  data-callback="handleCaptchaResponse"
+                ></div>
+              </div>
+              <label class="entry__error entry__error--primary"></label>
+            </div>
+          </div>
+          <div>
+            <div class="sib-form-block">
               <button
                 class="sib-form-block__button sib-form-block__button-with-loader button"
                 form="sib-form"

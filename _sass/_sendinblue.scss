@@ -53,3 +53,28 @@
     transform: rotate(1turn);
   }
 }
+
+.consent {
+  display: flex;
+  align-items: center;
+
+  p {
+    margin: 0;
+    opacity: 0.5;
+  }
+}
+
+.consent-checkbox {
+  margin-right: 0.5em;
+  position: relative;
+  top: -1px;
+}
+
+.gdpr-legal-copy {
+  font-size: $font-size-small;
+  opacity: 0.5;
+}
+
+.catpcha {
+  margin-bottom: 1em;
+}
