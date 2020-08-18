@@ -1,14 +1,125 @@
 <div class="optin-form">
-  <form action="{{ site.mailchimp_form_action }}" method="post" target="_blank">
-    <label for="optin-email" class="screen-reader-text">Email Address </label>
-    <input class="textfield" type="email" value="" name="EMAIL" id="optin-email" placeholder="Email..." required />
+  <!-- Sendinblue -->
+  <div class="sib-form">
+    <div id="sib-form-container" class="sib-form-container">
+      <div id="error-message" class="sib-form-message-panel">
+        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+          <span class="sib-form-message-panel__inner-text">
+            Oops! Something went wrong.
+          </span>
+        </div>
+      </div>
+      <div></div>
+      <div id="success-message" class="sib-form-message-panel">
+        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+          <span class="sib-form-message-panel__inner-text">
+            Success! Homing pigeon dispatched.
+          </span>
+        </div>
+      </div>
+      <div></div>
+      <div id="sib-container" class="sib-container--large sib-container--vertical">
+        <form
+          id="sib-form"
+          method="POST"
+          action="https://0fe097be.sibforms.com/serve/MUIEABQ4rypFGqKAXVXc6Y2pO8o-DCq3HJkwALsQpyiHg6_Ys7fZk82uiuaL-CLr15By5ISF5x2b325jfPqdsvQ9_gFQj-Zx3co_-1liAJkyd7gJd9G-BiSceatBRHQC7tLCH2ZsOVe8OPevFCEu-wacUrakEqHaIwhydK1DiAYX2fw2oWgetgqA4HJLyd1Hu2qMU6JF9-eLwXRk"
+          data-type="subscription"
+        >
+          <div>
+            <div class="sib-input sib-form-block">
+              <div class="form__entry entry_block">
+                <div class="form__label-row">
+                  <div class="entry__field">
+                    <label for="EMAIL" class="screen-reader-text">Email Address</label>
+                    <input
+                      class="input textfield"
+                      type="email"
+                      id="EMAIL"
+                      name="EMAIL"
+                      placeholder="Email..."
+                      data-required="true"
+                      required
+                    />
+                  </div>
+                </div>
 
-    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true">
-      <input type="text" name="b_e7715ee8c5bade402e6b49af2_af1bdc3608" tabindex="-1" value="" />
+                <div class="entry__error entry__error--primary"></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="sib-optin sib-form-block" data-required="true">
+              <div class="form__entry entry_mcq">
+                <div class="form__label-row">
+                  <label class="screen-reader-text" for="OPT_IN" data-required="*">
+                    Opt-in
+                  </label>
+                  <div class="entry__choice">
+                    <label class="consent">
+                      <input
+                        type="checkbox"
+                        class="input_replaced consent-checkbox"
+                        value="1"
+                        id="OPT_IN"
+                        name="OPT_IN"
+                        required
+                      />
+                      <div>
+                        <span class="checkbox checkbox_tick_positive"></span>
+                        <p>I agree to receive your newsletters and accept the data privacy statement.</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <label class="entry__error entry__error--primary"> </label>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="legal-copy">
+              We use Sendinblue as our marketing platform. By Clicking below to submit this form, you acknowledge that
+              the information you provided will be transferred to Sendinblue for processing in accordance with their
+              <a target="_blank" href="https://www.sendinblue.com/legal/termsofuse/">terms of use</a>. <br />
+              <!-- https://developers.google.com/recaptcha/docs/faq#id-like-to-hide-the-recaptcha-badge.-what-is-allowed -->
+              This site is protected by reCAPTCHA and the Google
+              <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+              <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+            </p>
+          </div>
+          <div
+            class="g-recaptcha"
+            data-sitekey="6LcQZcAZAAAAAAL6bFyfYYeRHLHc35loJS9nFLOZ"
+            data-callback="invisibleCaptchaCallback"
+            data-size="invisible"
+            onclick="executeCaptcha"
+          ></div>
+          <div>
+            <div class="sib-form-block">
+              <button
+                class="sib-form-block__button sib-form-block__button-with-loader button"
+                form="sib-form"
+                type="submit"
+              >
+                <svg
+                  class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon sib-loader-icon"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"
+                  />
+                </svg>
+                Request Invite
+              </button>
+            </div>
+          </div>
+
+          <div style="position: absolute; left: -5000px;" aria-hidden="true">
+            <input type="text" name="email_address_check" value="" class="input--hidden" />
+          </div>
+
+          <input type="hidden" name="locale" value="en" />
+        </form>
+      </div>
     </div>
-
-    <button class="button">Request Invite</button>
-    <small></small>
-  </form>
+  </div>
 </div>
