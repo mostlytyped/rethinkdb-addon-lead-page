@@ -76,31 +76,23 @@
             </div>
           </div>
           <div>
-            <p class="gdpr-legal-copy">
+            <p class="legal-copy">
               We use Sendinblue as our marketing platform. By Clicking below to submit this form, you acknowledge that
               the information you provided will be transferred to Sendinblue for processing in accordance with their
-              <a target="_blank" href="https://www.sendinblue.com/legal/termsofuse/">terms of use</a>.
+              <a target="_blank" href="https://www.sendinblue.com/legal/termsofuse/">terms of use</a>. <br />
+              <!-- https://developers.google.com/recaptcha/docs/faq#id-like-to-hide-the-recaptcha-badge.-what-is-allowed -->
+              This site is protected by reCAPTCHA and the Google
+              <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+              <a href="https://policies.google.com/terms">Terms of Service</a> apply.
             </p>
           </div>
-          <div class="sib-captcha sib-form-block catpcha">
-            <div class="form__entry entry_block">
-              <div class="form__label-row">
-                <script>
-                  function handleCaptchaResponse() {
-                    var event = new Event("captchaChange");
-                    document.getElementById("sib-captcha").dispatchEvent(event);
-                  }
-                </script>
-                <div
-                  class="g-recaptcha sib-visible-recaptcha"
-                  id="sib-captcha"
-                  data-sitekey="6LfJEMAZAAAAACNOCZndIc9JF-n6jzv3KPgTu1Qi"
-                  data-callback="handleCaptchaResponse"
-                ></div>
-              </div>
-              <label class="entry__error entry__error--primary"></label>
-            </div>
-          </div>
+          <div
+            class="g-recaptcha"
+            data-sitekey="6LcQZcAZAAAAAAL6bFyfYYeRHLHc35loJS9nFLOZ"
+            data-callback="invisibleCaptchaCallback"
+            data-size="invisible"
+            onclick="executeCaptcha"
+          ></div>
           <div>
             <div class="sib-form-block">
               <button

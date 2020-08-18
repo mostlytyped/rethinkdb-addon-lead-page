@@ -25,7 +25,7 @@
 .sib-form-message-panel {
   display: none;
   margin-bottom: 1em;
-  padding: 0.5em;
+  padding: 0.5em 1em;
 }
 
 .sib-form-message-panel--active {
@@ -59,6 +59,7 @@
   align-items: center;
 
   p {
+    font-size: $font-size-small;
     margin: 0;
     opacity: 0.5;
   }
@@ -70,11 +71,11 @@
   top: -1px;
 }
 
-.gdpr-legal-copy {
-  font-size: $font-size-small;
+.legal-copy {
+  font-size: 0.7em;
   opacity: 0.5;
 }
 
-.catpcha {
-  margin-bottom: 1em;
+.grecaptcha-badge {
+  visibility: hidden;
 }
