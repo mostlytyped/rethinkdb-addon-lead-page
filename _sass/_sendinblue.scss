@@ -42,6 +42,12 @@
   width: 20px;
 }
 
+.button:hover {
+  .sib-loader-icon {
+    fill: $brand;
+  }
+}
+
 .progress-indicator__icon {
   animation: indicator-spin 1.3s cubic-bezier(0.46, 0.35, 0.39, 0.85) infinite;
 }
@@ -55,6 +61,7 @@
 }
 
 .consent {
+  cursor: pointer;
   display: flex;
   align-items: center;
 
