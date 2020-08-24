@@ -4,7 +4,7 @@ title: "Documentation"
 ---
 
 [RethinkDB Cloud](https://elements.heroku.com/addons/rethinkdb) provides
-a hosted RethinkDB database intance. It is fully managed and elastic, i.e.,
+a hosted RethinkDB database instance. It is fully managed and elastic, i.e.,
 you can add or remove storage instantly and without the loss of data.
 
 ## Getting started
@@ -195,6 +195,6 @@ r.table("tv_shows").insert(r.hashMap("name", "Star Trek TNG")).run(conn);
 > Check out the official [ten-minute guide](https://rethinkdb.com/docs/guide/java/) and
 > the [ReQL command reference](https://rethinkdb.com/api/java/) to learn how to use RethinkDB.
 
-## Other languanges
+## Other languages
 
 Find drivers and documentation for other languages on the official [RethinkDB page](https://rethinkdb.com/docs/install-drivers/).

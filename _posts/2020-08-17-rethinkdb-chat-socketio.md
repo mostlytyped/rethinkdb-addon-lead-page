@@ -9,25 +9,25 @@ excerpt_separator: <!--more-->
 A lot of tutorials can be found that teach you how to build a chat app with Socket.io.
 However, have you ever wondered how to best persist those chat messages?
 
-Enter RethinkDB, a realtime schemaless database. You can store and handle documents
-easily, just like in MongoDB but it has reactivity built into it, meaning you can
-subscribe to queries and get notfied when data changes. The perfect choice when it
+Enter RethinkDB, a realtime schema-less database. You can store and handle documents
+easily, just like in MongoDB, but it has reactivity built into it. That means you can
+subscribe to queries and get notified when data changes, making it the perfect choice when it
 comes to storing chat messages.
 
 In this article you will learn how to create a simple chat app with Socket.io and
-persist the messages in RethinkDB. To show the usefulness of a reactive database
+persist the messages in RethinkDB. To show the usefulness of a reactive database,
 we will also add a simple bot that reacts when you address it.
 
 <!--more-->
 
-_You can find a try the [running app](https://rethink-chat-socketio.herokuapp.com/) or
+_You can try the [running app](https://rethink-chat-socketio.herokuapp.com/), or
 check out the [code repository](https://github.com/mostlytyped/rethink-chat-socketio)._
 
 ## Application setup
 
 We will build a Node.js app, so you need to have `node` and `npm` installed.
 If you want to deploy your app to Heroku, you will also need a
-[Heroku account](https://signup.heroku.com/) as well having their
+[Heroku account](https://signup.heroku.com/), as well having their
 [CLI](https://devcenter.heroku.com/articles/heroku-cli) installed.
 To run your app locally, you need to
 [install and run a RethinkDB instance](https://rethinkdb.com/).
@@ -37,7 +37,7 @@ To create the application, run the following in a terminal.
 ```sh
 $ mkdir rethink-chat && cd rethink-chat
 $ npm init -y
-$ npm install rethinkdb express morgan http socket.io
+$ npm install rethinkdb express morgan http socket.io lorem-ipsum
 ```
 
 This will initialize a Node.js app and install all required dependencies.
@@ -52,26 +52,26 @@ $ heroku create
 ```
 
 We will also need a RethinkDB instance to store and subscribe to the chat messages
-sent between users. You can do this via the [RethinkDB Cloud addon](/) as follows:
+sent between users. You can do this via the [RethinkDB Cloud add-on](/) as follows:
 
 ```sh
-$ heroku addons:add rethinkdb
+$ heroku addons:create rethinkdb
 ```
 
-_Note: The RethinkDB Cloud addon is curently in alpha. Request an invite for your
-Heroku account email [here](/)._
+_Note: The RethinkDB Cloud add-on is currently in alpha. [Request an invite for your
+Heroku account email](/)._
 
 ## Building the server
 
 To begin, let us set up the Node.js server. Create an `index.js` file and add
 the following server skeleton.
 We use an Express.js server to handle http traffic and Socket.io
-to handle websocket connections with clients.
+to handle WebSocket connections with clients.
 
 ```js
 // index.js
 
-// Setup express and socket.io servers
+// Setup Express and Socket.io servers
 var express = require("express");
 const app = express();
 var http = require("http").createServer(app);
@@ -103,18 +103,18 @@ http.listen(listenPort, () => {
 });
 ```
 
-This skeleton serves a static frontend from the `public` folder. Will will create the fronend
+This skeleton serves a static frontend from the `public` folder. We will create the frontend
 code later. In addition our server needs to do three things:
 
-1. Handle the connections to the RethinkDB database
-2. Create a Express.js route that will give a user access to chat room
+1. Handle connections to the RethinkDB database
+2. Create an Express.js route that will give a user access to the chat room
 3. Configure the Socket.io server to listen to incoming chat messages
 
 ### RethinkDB connection
 
-We manage our RethinkDB connection lazily, i.e., only create the (re-)connection
+We manage our RethinkDB connection lazily, i.e., we only create the (re-)connection
 when it is actually needed. The connection parameters are parsed from
-environment variables or the defaults are used.
+environment variables, or the defaults are used.
 
 ```js
 // index.js
@@ -154,14 +154,14 @@ const getRethinkDB = async function () {
 };
 ```
 
-On Heroku, the RethinkDB Cloud addon will set the environment variables and when running
-locally, the defaults should work for a locally running instance of RethinkDB.
+On Heroku, the RethinkDB Cloud add-on will set the environment variables. For a locally running
+instance of RethinkDB, the defaults should work for a locally running instance.
 
 ### Route to access room
 
 As mentioned earlier, the frontend is static. We do however need a route to access
-a chat room. The route will return the message history of given room as well as a
-websocket handle to access it.
+a chat room. The route will return the message history of a given room, as well as a
+WebSocket handle to access it.
 
 ```js
 // index.js
@@ -180,7 +180,7 @@ app.get("/chats/:room", async (req, res) => {
       if (err) throw err;
       cursor.each((err, row) => {
         if (row.new_val) {
-          // Got a new message, send it via socket.io
+          // Got a new message, send it via Socket.io
           io.emit(room, row.new_val);
         }
       });
@@ -188,7 +188,7 @@ app.get("/chats/:room", async (req, res) => {
     watchedRooms[room] = true;
   }
 
-  // Return message history & socket.io handle to get new messages
+  // Return message history & Socket.io handle to get new messages
   let orderedQuery = query.orderBy(r.desc("ts"));
   orderedQuery.run(conn, (err, cursor) => {
     if (err) throw err;
@@ -203,14 +203,14 @@ app.get("/chats/:room", async (req, res) => {
 });
 ```
 
-The first time this route is called for a particlar room (when the first person joins),
+The first time this route is called for a particular room (when the first person joins),
 we also subscribe to a RethinkDB query to get notified whenever a new chat message is
 available. We send new chat messages via Socket.io to any clients listening for the
 room's handle.
 
 ### Listen for new messages
 
-The last puzzle piece of the server is to listen and save all incomming chat
+The last puzzle piece of the server is to listen and save all incoming chat
 messages. Whenever a message comes in via the `chats` handle of the Socket.io
 connection, we save it to the `chats` table in RethinkDB.
 
@@ -232,7 +232,7 @@ io.on("connection", (socket) => {
 ```
 
 Saving a value in the `chats` table will trigger the subscription we added above, causing
-the message to be sent to all the clients listening to this room, including the sender of
+the message to be sent to all clients listening to this room, including the sender of the
 message.
 
 ## Frontend
@@ -278,7 +278,7 @@ as well as JavaScript and CSS assets.
   // Create random username
   let username = Math.random().toString(36).substring(2, 8);
 
-  // Setup socket.io
+  // Setup Socket.io
   var socket = io();
 
   // Main view
@@ -304,15 +304,13 @@ as well as JavaScript and CSS assets.
   }).$mount("#app");
   ```
 
-  When the app is loaded we create a random username, initialize the
-  socket.io client, and mount a view app with three components and
-  two routes. The `/` path points to the main view and the `/:roomId`
-  path points to the room view containing a chat room component.
+  The Vue app contains two routes. The `/` path points to the main view
+  and the `/:roomId` path points to the room view.
 
 ### Main view
 
 The main view lets you choose a username (default is a random string) and
-allwos you to join a room with a given name.
+allows you to join a room with a given name.
 
 ```js
 // public/js/app.js
@@ -348,13 +346,13 @@ Whenever you join a room, the Vue router will load the chat room view.
 
 ### Chat room
 
-The chat room, a room view containing a chat room component invokes the
-server route to join the given room when it is created. It also registers
-a socket.io handler that listens for incoming chat messages and adds them
+The chat room, a room view containing a chat room component. makes a request to the
+Express route to join the given room when it is created. It also registers
+a Socket.io handler that listens for incoming chat messages and adds them
 to the list of messages.
 
 The chat room allows the user to type and send a message which will then be
-sent to the server via the Websocket handled by Socket.io.
+sent to the server via the WebSocket handled by Socket.io.
 
 ```js
 // public/js/app.js
@@ -422,7 +420,7 @@ const ChatRoom = Vue.component("chat-room", {
 });
 ```
 
-Now we have a working server as well as frontend. The last thing we need is to make sure
+Now we have a working server and frontend. The last thing we need is to make sure
 the `chats` table actually exists in the RethinkDB database when we run the app.
 
 ## Database migration
@@ -479,9 +477,9 @@ to queries. This feature also comes in handy when creating a simple chat bot. Th
 bot simply needs to subscribe to changes in the `chats` table and react to them whenever
 appropriate.
 
-Our Lorem bot will reply with a random section of the Lorem Ipsum whenever promted with
+Our Lorem bot will reply with a random section of Lorem Ipsum whenever prompted with
 `@lorem`. The bot subscribes to the `chats` table and scans the beginning of the message.
-If it starts with `@lorem` it will reply with a message in the same room.
+If it starts with `@lorem`, it will reply with a message in the same room.
 
 ```js
 // lorem-bot.js
@@ -562,13 +560,15 @@ to create a `Procfile`. This file basically tells Heroku
 what processes to run.
 
 ```
+// Procfile
+
 release: node migrate.js
 web: node index.js
 lorem-bot: node lorem-bot.js
 ```
 
 The `release` and `web` processes are recognized by Heroku as
-the command to run upon release and the main web app. The
+the command to run upon release and the main web app respectively. The
 `lorem-bot` process is just a worker process that could have any
 name.
 
@@ -581,13 +581,13 @@ $ git push heroku master
 ```
 
 _Note: you will need to manually enable the `lorem-bot` process in your
-Heroku app. You can do so on the Resources tab_
+Heroku app. You can do so on the Resources tab._
 
 ## Conclusion
 
 In less than 15 minutes we managed to create and deploy a chat application
-with a simple bot. This shows the power and ease of use of RethinkDB because
-the ability to subscribe to queries make it natural and easy to build a reactive
-app and interact with Socket.io. Further, Heroku makes deployment a breeze and
-with the RethinkDB Cloud addon you will never have to do the tedious work of
+with a simple bot. This shows the power and ease of use of RethinkDB.
+The ability to subscribe to queries makes it natural and easy to build a reactive
+app and interact with Socket.io. Further, Heroku makes deployment a breeze, and
+with the RethinkDB Cloud add-on you will never have to do the tedious work of
 managing a database server yourself.
