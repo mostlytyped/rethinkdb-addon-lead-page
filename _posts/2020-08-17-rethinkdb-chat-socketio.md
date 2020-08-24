@@ -2,7 +2,7 @@
 layout: post
 title: "Build a Chat app with SocketIO and RethinkDB"
 tags: rethinkdb socketio heroku
-author: sascha
+author: Sascha
 excerpt_separator: <!--more-->
 ---
 
