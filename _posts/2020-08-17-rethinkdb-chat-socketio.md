@@ -48,6 +48,7 @@ In order to deploy the application to Heroku we need to create a
 Heroku app:
 
 ```sh
+$ git init
 $ heroku create
 ```
 
@@ -575,6 +576,7 @@ name.
 Deploy the app to Heroku with
 
 ```sh
+$ echo "node_modules/" > .gitignore
 $ git add .
 $ git commit -m 'Working rethink-chat app'
 $ git push heroku master
