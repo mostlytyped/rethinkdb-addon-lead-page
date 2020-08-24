@@ -18,14 +18,14 @@
   background-color: #ffeded;
   border-radius: $border-radius;
   border-color: #ff4949;
-  margin-bottom: 1em;
-  padding: 0.5em 1em;
+  margin-bottom: $spacing-unit;
+  padding: $spacing-unit / 4 $spacing-unit;
 }
 
 .sib-form-message-panel {
   display: none;
-  margin-bottom: 1em;
-  padding: 0.5em 1em;
+  margin-bottom: $spacing-unit;
+  padding: $spacing-unit / 4 $spacing-unit;
 }
 
 .sib-form-message-panel--active {
@@ -44,7 +44,7 @@
 
 .button:hover {
   .sib-loader-icon {
-    fill: $brand;
+    fill: $brand-color;
   }
 }
 
@@ -64,16 +64,17 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  margin-bottom: $spacing-unit / 4;
 
   p {
-    font-size: $font-size-small;
+    font-size: $small-font-size;
     margin: 0;
     opacity: 0.5;
   }
 }
 
 .consent-checkbox {
-  margin-right: 0.5em;
+  margin-right: $spacing-unit / 4;
   position: relative;
   top: -1px;
 }

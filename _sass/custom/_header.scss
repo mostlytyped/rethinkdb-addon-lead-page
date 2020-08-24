@@ -1,0 +1,14 @@
+.site-header-home {
+  background: $brand-color;
+  border-color: $brand-color;
+
+  .site-nav {
+    .page-link {
+      color: $white;
+    }
+  }
+}
+
+.site-title-logo {
+  max-width: 170px;
+}

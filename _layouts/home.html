@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body class="home">
+
+    {%- include header.html header-class="site-header-home" wrapper-class="wrapper-large" site-title-display="hide" -%}
+    {%- include banner.html -%}
+
+    <main aria-label="Content">
+      {{ content }}
+    </main>
+
+    {%- include footer.html footer-class="footer-home" wrapper-class="wrapper-large" -%}
+
+    {%- include optin-js.html -%}
+
+  </body>
+
+</html>

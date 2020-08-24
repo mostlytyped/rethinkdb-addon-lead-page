@@ -1,0 +1,29 @@
+.features {
+  margin-top: 2em;
+  margin-bottom: $spacing-unit / 2;
+
+  @media only screen and (min-width: $on-medium) {
+    display: grid;
+    grid-gap: $spacing-unit / 2;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.feature {
+  border: 5px dotted $brand-color-light;
+  margin-bottom: $spacing-unit / 2;
+  padding: $spacing-unit / 2;
+
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.feature-title {
+  margin-top: 0;
+
+  // small h3 size
+  @include relative-font-size(1.375);
+}

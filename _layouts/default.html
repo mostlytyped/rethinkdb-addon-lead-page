@@ -1,61 +1,20 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    {% if jekyll.environment == "production" %}
-      <!-- Google Tag Manager -->
-      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','UA-175248865-1');</script>
-      <!-- End Google Tag Manager -->
-    {% endif %}
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
+  {%- include head.html -%}
 
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" href="/icon.png" />
-    <!-- Place favicon.ico in the root directory -->
-
-    <!-- Jekyll SEO plugin. Displays `<title>` and social meta tags -->
-    {% seo %}
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-
-    <meta name="theme-color" content="#fafafa">
-  </head>
   <body>
-    {% include header.html %}
 
-    <main>
-      {{ content }}
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
     </main>
 
-    {% include footer.html %}
+    {%- include footer.html -%}
 
-    <!-- Sendinblue -->
-    <script>
-      window.REQUIRED_CODE_ERROR_MESSAGE = "Please choose a country code";
-  
-      window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE =
-        "Something's not quite right with that email. Check it and try again.";
-  
-      window.REQUIRED_ERROR_MESSAGE = "Required field!";
-  
-      window.GENERIC_INVALID_MESSAGE = "Something's not quite right with that email. Check it and try again.";
-  
-      window.translation = {
-        common: {
-          selectedList: "{quantity} list selected",
-          selectedLists: "{quantity} lists selected",
-        },
-      };
-  
-      var AUTOHIDE = Boolean(0);
-    </script>
-    <script src="https://sibforms.com/forms/end-form/build/main.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?hl=en"></script>
   </body>
+
 </html>
