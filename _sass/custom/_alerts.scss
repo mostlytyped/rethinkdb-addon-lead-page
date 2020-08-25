@@ -11,9 +11,19 @@
   border-radius: $border-radius;
   font-style: initial;
 
+  h1, h2, h3, h4, h5 {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
   a,
   a:visited {
     font-weight: bold;
+  }
+
+  code {
+    color: $text-color;
   }
 }
 
@@ -22,6 +32,10 @@
   color: #004085;
   background-color: #cce5ff;
   border-color: #b8daff;
+
+  h1, h2, h3, h4, h5 {
+    color: #004085;
+  }
 
   a,
   a:visited {
@@ -34,6 +48,10 @@
   background-color: #e2e3e5;
   border-color: #d6d8db;
 
+  h1, h2, h3, h4, h5 {
+    color: #383d41;
+  }
+
   a,
   a:visited {
     color: #202326;
@@ -44,6 +62,10 @@
   color: #155724;
   background-color: #d4edda;
   border-color: #c3e6cb;
+
+  h1, h2, h3, h4, h5 {
+    color: #155724;
+  }
 
   a,
   a:visited {
@@ -56,6 +78,10 @@
   background-color: #d1ecf1;
   border-color: #bee5eb;
 
+  h1, h2, h3, h4, h5 {
+    color: #0c5460;
+  }
+
   a,
   a:visited {
     color: #062c33;
@@ -67,6 +93,10 @@
   background-color: #fff3cd;
   border-color: #ffeeba;
 
+  h1, h2, h3, h4, h5 {
+    color: #856404;
+  }
+
   a,
   a:visited {
     color: #533f03;
@@ -77,6 +107,10 @@
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb;
+
+  h1, h2, h3, h4, h5 {
+    color: #721c24;
+  }
 
   a,
   a:visited {
