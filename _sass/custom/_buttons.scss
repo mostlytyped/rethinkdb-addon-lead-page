@@ -1,5 +1,5 @@
 .button {
-  background: $brand;
+  background: $brand-color;
   color: $white;
   display: inline-block;
   vertical-align: middle;
@@ -9,7 +9,7 @@
   border-radius: $border-radius;
   transition: background-color $hover-transition-time ease-out, color $hover-transition-time ease-out;
   font-family: inherit;
-  font-size: $font-size-h5;
+  @include relative-font-size(1.125); // h5 size
   appearance: none;
   line-height: 1;
   text-align: center;
@@ -17,6 +17,6 @@
 
   &:hover {
     background: $white;
-    color: $brand;
+    color: $brand-color;
   }
 }

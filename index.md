@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: "Reliable realtime database for Heroku"
 image: social.png
 ---
