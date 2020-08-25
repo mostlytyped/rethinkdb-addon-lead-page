@@ -20,8 +20,8 @@ we will also add a simple bot that reacts when you address it.
 
 <!--more-->
 
-_You can try the [running app](https://rethink-chat-socketio.herokuapp.com/), or
-check out the [code repository](https://github.com/mostlytyped/rethink-chat-socketio)._
+> You can try the [running app](https://rethink-chat-socketio.herokuapp.com/), or
+> check out the [code repository](https://github.com/mostlytyped/rethink-chat-socketio).
 
 ## Application setup
 
@@ -59,8 +59,8 @@ sent between users. You can do this via the [RethinkDB Cloud add-on](/) as follo
 $ heroku addons:create rethinkdb
 ```
 
-_Note: The RethinkDB Cloud add-on is currently in alpha. [Request an invite for your
-Heroku account email](/)._
+> The RethinkDB Cloud add-on is currently in alpha. [Request an invite for your
+> Heroku account email](/).
 
 ## Building the server
 
@@ -156,7 +156,7 @@ const getRethinkDB = async function () {
 ```
 
 On Heroku, the RethinkDB Cloud add-on will set the environment variables. For a locally running
-instance of RethinkDB, the defaults should work for a locally running instance.
+instance of RethinkDB, the defaults should work.
 
 ### Route to access room
 
@@ -204,8 +204,9 @@ app.get("/chats/:room", async (req, res) => {
 });
 ```
 
+This is where the RethinkDB magic happens.
 The first time this route is called for a particular room (when the first person joins),
-we also subscribe to a RethinkDB query to get notified whenever a new chat message is
+we subscribe to a RethinkDB query to get notified whenever a new chat message is
 available. We send new chat messages via Socket.io to any clients listening for the
 room's handle.
 
@@ -473,7 +474,7 @@ This migration checks if the `chats` table exists, and if it is missing, it crea
 
 ## A simple chat bot
 
-One of RethinkDBs great features is the baked in reactivity that allows us to subscribe
+As we saw, one of RethinkDBs great features is the baked in reactivity that allows us to subscribe
 to queries. This feature also comes in handy when creating a simple chat bot. The
 bot simply needs to subscribe to changes in the `chats` table and react to them whenever
 appropriate.
@@ -582,14 +583,14 @@ $ git commit -m 'Working rethink-chat app'
 $ git push heroku master
 ```
 
-_Note: you will need to manually enable the `lorem-bot` process in your
-Heroku app. You can do so on the Resources tab._
+> You will need to manually enable the `lorem-bot` process in your
+> Heroku app. You can do so on the Resources tab.
 
 ## Conclusion
 
 In less than 15 minutes we managed to create and deploy a chat application
 with a simple bot. This shows the power and ease of use of RethinkDB.
-The ability to subscribe to queries makes it natural and easy to build a reactive
-app and interact with Socket.io. Further, Heroku makes deployment a breeze, and
+The ability to subscribe to queries makes it easy to build a reactive
+app and a natural fit to interact with Socket.io. Further, Heroku makes deployment a breeze, and
 with the RethinkDB Cloud add-on you will never have to do the tedious work of
 managing a database server yourself.
