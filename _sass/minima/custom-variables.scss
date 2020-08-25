@@ -16,7 +16,8 @@ $title-font-family: "Roboto Slab", serif;
 
 $content-width-large: 1200px;
 
-$border-radius: 5px;
+// Minima code blocks have a 3px border, so stay consistent
+$border-radius: 3px;
 
 $hover-transition-time: 0.25s;
 

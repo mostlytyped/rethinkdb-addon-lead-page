@@ -13,6 +13,16 @@ h5 {
   font-weight: 500;
 }
 
+// Override Minima default styling
+blockquote {
+  @include relative-font-size(1);
+
+  a,
+  a:visited {
+    font-weight: bold;
+  }
+}
+
 .wrapper-large {
   max-width: calc(#{$content-width-large} - (#{$spacing-unit}));
   margin-right: auto;
