@@ -20,8 +20,9 @@ we will also add a simple bot that reacts when you address it.
 
 <!--more-->
 
-> You can try the [running app](https://rethink-chat-socketio.herokuapp.com/), or
-> check out the [code repository](https://github.com/mostlytyped/rethink-chat-socketio).
+You can also try the [running app](https://rethink-chat-socketio.herokuapp.com/), or
+check out the [code repository](https://github.com/mostlytyped/rethink-chat-socketio).
+{: .alert-info}
 
 ## Application setup
 
@@ -59,8 +60,9 @@ sent between users. You can do this via the [RethinkDB Cloud add-on](/) as follo
 $ heroku addons:create rethinkdb
 ```
 
-> The RethinkDB Cloud add-on is currently in alpha. [Request an invite for your
-> Heroku account email](/).
+The RethinkDB Cloud add-on is currently in alpha. [Request an invite for your
+Heroku account email](/).
+{: .alert-warning}
 
 ## Building the server
 
@@ -583,8 +585,9 @@ $ git commit -m 'Working rethink-chat app'
 $ git push heroku master
 ```
 
-> You will need to manually enable the `lorem-bot` process in your
-> Heroku app. You can do so on the Resources tab.
+You will need to manually enable the `lorem-bot` process in your
+Heroku app. You can do so on the Resources tab.
+{: .alert-info}
 
 ## Conclusion
 
