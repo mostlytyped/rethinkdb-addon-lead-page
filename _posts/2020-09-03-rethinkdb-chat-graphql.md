@@ -15,7 +15,7 @@ In this article you will learn how to use GraphQL subscriptions instead, to acce
 RethinkDB's reactive nature in the frontend.
 
 RethinkDB is a realtime document database. It is easy to use and schema-less, just
-like in MongoDB. In addition, you can subscribe to queries and get notified when
+like MongoDB. In addition, you can subscribe to queries and get notified when
 data changes, making it the perfect choice for realtime applications.
 
 <!--more-->
@@ -34,7 +34,7 @@ To run your app locally, you need to
 [install and run a RethinkDB instance](https://rethinkdb.com/).
 
 We will use a simple Node.js server and a Vue.js frontend. Since
-the frontend needs to be build we will create a Vue app with the
+the frontend needs to be build, we will create a Vue app with the
 [Vue CLI](https://cli.vuejs.org/):
 
 ```sh
@@ -195,7 +195,7 @@ to our GraphQL context so it can be used in any incoming request.
 
 ### Create a GraphQL schema
 
-The main logic of the server resides in defining the GraphQL types and implement
+The main logic of the server resides in defining the GraphQL types and implementing
 their resolvers. We need to be able to preform three different actions, namely
 
 - Query chat messages in a room
@@ -238,7 +238,7 @@ exports.typeDefs = gql`
 
 Second, we need to resolve these actions, i.e., implement the code that they invoke. The query
 and the mutation are fairly straight-forward and are implemented as a simple RethinkDB
-query. The subscription however, requires an async iterator. This is basically spell
+query. The subscription however, requires an async iterator. This is basically a spell
 to turn the RethinkDB magic into GraphQL subscription magic. In more earthly terms,
 the async iterator wraps the RethinkDB change feed so we can subscribe to it via
 GraphQL.
@@ -313,7 +313,7 @@ class RethinkIterator {
 }
 ```
 
-With the server set up, lets move to the frontend
+With the server set up, let's move to the frontend.
 
 ## Creating the frontend
 
@@ -323,7 +323,8 @@ you might as well use React or any other frontend framework that supports GraphQ
 
 Our frontend will use two views, one for the home page and one for the chat room as well
 as a router to navigate between the two. For this lets add a router to the Vue skeleton
-and install all required dependencies:
+and install all required dependencies. Adding a router to the Vue app will warn you about
+uncommited changes (proceed anyway) and ask if you want history mode (no).
 
 ```sh
 $ vue add router
@@ -448,7 +449,7 @@ a room.
 
 <script>
 export default {
-  name: "Main",
+  name: "Home",
   data() {
     return {
       user: window.username,
