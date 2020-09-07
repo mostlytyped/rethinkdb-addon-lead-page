@@ -401,7 +401,7 @@ export default {
 </style>
 ```
 
-In our `router.js` we basically replace the "About" route with our "Room" route.
+In our `router/index.js` we basically replace the "About" route with our "Room" route.
 
 ```js
 // src/router/index.js
