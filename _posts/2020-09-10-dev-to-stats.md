@@ -56,7 +56,7 @@ not run regularly unless you pay for a dyno. Alternatively, you can visit your s
 day. For now, this is what I do ;-)_
 {: .alert-warning}
 
-Thats it, you are done. Enjoy your historical stats.
+That's it, you are done. Enjoy your historical stats.
 
 ## A step by step tutorial
 
@@ -727,6 +727,7 @@ Heroku app. You can do so on the Resources tab.
 ## Wrapping up
 
 With this app running on Heroku I can finally go back to coding and writing articles
-without missing any move my article stats might be making. Let me know if this
+without missing any move my article stats might be making.
+Let me know if this
 app is useful to you, if there are any bugs, or if there are any features you would
 want me to add.
