@@ -2,6 +2,14 @@ url: "https://www.rethinkdb.cloud" # the base hostname & protocol for your site,
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "RethinkDB Cloud" # the name of your site, e.g. ACME Corp.
 
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      excerpt_separator: <!--more-->
+
 business_name: "Mostly Typed"
 
 google_analytics: "UA-175248865-1"
