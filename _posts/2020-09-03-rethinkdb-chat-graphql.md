@@ -1,10 +1,8 @@
 ---
-layout: post
 #title: "Build a realtime Chat app with RethinkDB and GraphQL"
 title: "Bring RethinkDB's realtime magic to the frontend with GraphQL"
 tags: rethinkdb graphql heroku
 author: Sascha
-excerpt_separator: <!--more-->
 ---
 
 <!-- Bring RethinkDB's reactivity to the frontend with GraphQL subscriptions -->

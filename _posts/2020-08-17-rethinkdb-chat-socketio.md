@@ -1,9 +1,7 @@
 ---
-layout: post
 title: "Build a Chat app with Socket.IO and RethinkDB"
 tags: rethinkdb socketio heroku
 author: Sascha
-excerpt_separator: <!--more-->
 ---
 
 A lot of tutorials can be found that teach you how to build a chat app with Socket.io.
