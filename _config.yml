@@ -12,7 +12,7 @@ defaults:
 
 business_name: "Mostly Typed"
 
-google_analytics: "UA-175248865-1"
+google_analytics: "G-FX9LL9L99X"
 
 # SEO (https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md)
 # `tagline` is an unreleased feature and does not work, although it's mentioned in the seo plugin docs
