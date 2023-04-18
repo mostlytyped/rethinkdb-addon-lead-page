@@ -1,4 +1,4 @@
-# RethinkDB Heroku Add-on landing page
+# RethinkDB Heroku Add-on landing page ([rethinkdb.cloud](https://www.rethinkdb.cloud))
 
 A simple landing page, built as a static site on [Jekyll](https://jekyllrb.com/).
 
